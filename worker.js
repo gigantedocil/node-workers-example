@@ -22,6 +22,8 @@ function start() {
   // Connect to the named work queue
   let workQueue = new Queue('work', REDIS_URL);
 
+  console.log('Successfully connected to queue.');
+
   workQueue.process(maxJobsPerWorker, async (job) => {
     // This is an example job that just slowly reports on progress
     // while doing no work. Replace this with your own job logic.

@@ -44,4 +44,4 @@ workQueue.on('global:completed', (jobId, result) => {
   console.log(`Job completed with result ${result}`);
 });
 
-app.listen(PORT, () => console.log("Server started!"));
+app.listen(PORT, () => console.log("Server started on port " + PORT + "."));
