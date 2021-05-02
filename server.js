@@ -9,7 +9,7 @@ let REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
 let app = express();
 
 // Create / Connect to a named work queue
-let workQueue = new Queue('work', REDIS_URL);
+let workQueue = new Queue('work', REDIS_URL, { redis: { enableReadyCheck: false }});
 
 // Serve the two static assets
 app.get('/', (req, res) => res.sendFile('index.html', { root: __dirname }));
